@@ -42,14 +42,6 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
-      },
-      //add
-      '/ops/**': {
-        target: 'http://ss.yprhealth.com/',
-        changeOrigin: true,
-        cookieDomainRewrite: {
-          "*": ''
-        }
       }
     },
     after: require('./mock/mock-server.js')
