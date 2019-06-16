@@ -11,7 +11,7 @@
           <i class="el-icon-caret-bottom" style="font-size: 16px;top: 16px;"/>
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <el-dropdown-item>张某某</el-dropdown-item>
+          <!--<el-dropdown-item>张某某</el-dropdown-item>-->
           <el-dropdown-item divided>
             <span style="display:block;" @click="logout">退出</span>
           </el-dropdown-item>
