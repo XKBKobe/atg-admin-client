@@ -17,7 +17,7 @@ let loadingInstance;
 service.interceptors.request.use(
   config => {
     // do something before request is sent
-    config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+   // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
     loadingInstance = Loading.service({fullscreen: true})
     return config
   },

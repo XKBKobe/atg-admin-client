@@ -25,6 +25,12 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
+
+      commit('SET_TOKEN', 'loginToken')
+      setToken('loginToken')
+      resolve()
+
+      /**
       login({ username: username.trim(), password: password }).then(response => {
         const { data } = response
         commit('SET_TOKEN', data.token)
@@ -32,13 +38,23 @@ const actions = {
         resolve()
       }).catch(error => {
         reject(error)
-      })
+      })**/
     })
   },
 
   // get user info
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
+
+
+      commit('SET_NAME', 'atsg')
+      commit('SET_AVATAR', 'atsg')
+      resolve({
+        name:'atsg',
+        avatar:'avatar'
+      })
+
+      /**
       getInfo(state.token).then(response => {
         const { data } = response
 
@@ -53,7 +69,7 @@ const actions = {
         resolve(data)
       }).catch(error => {
         reject(error)
-      })
+      })**/
     })
   },
 

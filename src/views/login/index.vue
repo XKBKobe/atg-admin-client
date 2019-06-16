@@ -106,21 +106,30 @@ export default {
       })
     },
     handleLogin() {
-      console.log(this.http);
-
-
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           // this.http('http://www.baidu.com',{name:12,code:212}).then(data =>{
           //
           // })
-          this.loading = true
+
+
           this.$store.dispatch('user/login', this.loginForm).then(() => {
-            this.$router.push({ path: this.redirect || '/' })
+            this.$router.push({ path: '/accountManage' || '/' })
             this.loading = false
           }).catch(() => {
             this.loading = false
           })
+
+
+
+          // this.loading = true
+          // this.$store.dispatch('user/login', this.loginForm).then(() => {
+          //   this.$router.push({ path: '/accountManage' || '/' })
+          //   this.loading = false
+          // }).catch(() => {
+          //   this.loading = false
+          // })
+
         } else {
           console.log('error submit!!')
           return false
